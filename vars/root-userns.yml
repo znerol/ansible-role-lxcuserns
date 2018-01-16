@@ -1,0 +1,3 @@
+lxcuserns_name: root
+lxcuserns_start: 0x1000000
+lxcuserns_count: 0x80000000

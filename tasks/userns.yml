@@ -1,0 +1,9 @@
+- name: User namespace defined in /etc/subuid and /etc/subgid
+  lineinfile:
+    path: "{{ item }}"
+    regexp: '^{{ lxcuserns_name }}'
+    line: '{{ lxcuserns_name }}:{{ lxcuserns_start }}:{{ lxcuserns_count }}'
+    state: '{{ lxcuserns_state }}'
+  with_items:
+    - /etc/subuid
+    - /etc/subgid
